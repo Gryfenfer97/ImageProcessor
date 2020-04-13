@@ -1,0 +1,29 @@
+blur
+1 1 1
+1 1 1
+1 1 1
+9
+
+Identity
+0 0 0
+0 1 0
+0 0 0
+1
+
+contourHorizontal
+-1 -1 -1
+0 0 0
+1 1 1
+1
+
+contourVertical
+-1 0 1
+-1 0 1
+-1 0 1
+1
+
+décalage
+1 0 0
+0 1 0
+0 0 1
+1
