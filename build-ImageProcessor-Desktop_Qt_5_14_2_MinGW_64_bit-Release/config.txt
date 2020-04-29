@@ -1,0 +1,2 @@
+MatrixPath=ConvolutionMatrix.txt
+Mode=Wrap

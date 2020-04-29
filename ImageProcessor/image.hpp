@@ -6,13 +6,21 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include <QObject>
+#include <QWidget>
+#include "prewittprogresstransmitter.hpp"
+
+
 
 class Image : public QImage
 {
+
 private:
     int** getRegion(int i, int j);
     int matrixConvolutionProduct(int** region, int** mask);
     int getNormalizeDivider(int** mask);
+    prewittProgressTransmitter* ppt;
+
 public:
     Image();
     Image(int width, int height, int value);
@@ -21,7 +29,11 @@ public:
 
     ~Image();
 
-    void prewitt(int** mask, int divider);
+    void setPPT();
+
+    prewittProgressTransmitter* getPPT();
+
+    void prewitt(int** mask, int divider, QString mode="Wrap");
 
     void save(QString filename);
 

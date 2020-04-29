@@ -2,7 +2,7 @@
 
 Image::Image() : QImage()
 {
-
+    ppt = new prewittProgressTransmitter;
 }
 
 
@@ -20,15 +20,16 @@ Image::Image(int width, int height) : QImage(width, height, QImage::Format_Grays
     for(int i=0;i<height;i++){
         for(int j=0;j<width;j++){
             value = rand()%255;
-            //value = (j*j)%256;
+            //value = (i+j)%256;
             this->setPixel(j,i,qRgb(value,value,value));
         }
     }
+    ppt = new prewittProgressTransmitter();
 
 }
 
 Image::Image(const QImage& image) : QImage(image){
-
+    ppt = new prewittProgressTransmitter;
 }
 
 Image::~Image(){
@@ -57,30 +58,68 @@ void Image::save(QString filename){
 }
 
 
-void Image::prewitt(int** mask, int divider){
-    Image finalImage(width(), height());
+void Image::prewitt(int** mask, int divider, QString mode){
     int color;
+    int progress = 0;
     if (divider == 0) {
         divider = getNormalizeDivider(mask);
     }
-    for (int i = 0; i < height(); i++) {
-        for (int j = 0; j < width(); j++) {
-            if(divider > 0){
-                color = matrixConvolutionProduct(getRegion(i, j), mask)/divider;
-            }
-            else if(divider == 0){
-                color = (matrixConvolutionProduct(getRegion(i, j), mask) + 128)%256;
-            }
-            else{
-                color = ((matrixConvolutionProduct(getRegion(i, j), mask)/divider)+255)%256;
-            }
+    if(mode == "Crop"){
+        Image finalImage(width()-2, height()-2);
+        int nbPixels = (width()-2)*(height()-2);
+        for (int i = 1; i < height()-1; i++) {
+            for (int j = 1; j < width()-1; j++) {
+                if(divider > 0){
+                    color = matrixConvolutionProduct(getRegion(i, j), mask)/divider;
+                }
+                else if(divider == 0){
+                    color = (matrixConvolutionProduct(getRegion(i, j), mask) + 128)%256;
+                }
+                else{
+                    color = ((matrixConvolutionProduct(getRegion(i, j), mask)/divider)+255)%256;
+                }
 
-            finalImage.setPixel(j,i, qRgb(color, color, color));
-
+                finalImage.setPixel(j-1,i-1, qRgb(color, color, color));
+                progress++;
+                ppt->emitPrewittProgress((int)((double)(progress*100)/(double)nbPixels));
+            }
         }
+
+        *this = finalImage;
+        ppt->emitReset();
     }
+    else{
+        Image finalImage(width(), height());
+        int nbPixels = width()*height();
+
+        for (int i = 0; i < height(); i++) {
+            for (int j = 0; j < width(); j++) {
+                if(divider > 0){
+                    color = matrixConvolutionProduct(getRegion(i, j), mask)/divider;
+                }
+                else if(divider == 0){
+                    color = (matrixConvolutionProduct(getRegion(i, j), mask) + 128)%256;
+                }
+                else{
+                    color = ((matrixConvolutionProduct(getRegion(i, j), mask)/divider)+255)%256;
+                }
+
+                finalImage.setPixel(j,i, qRgb(color, color, color));
+                progress++;
+                //qDebug() << progress;
+                ppt->emitPrewittProgress((int)((double)(progress*100)/(double)nbPixels));
+            }
+        }
+        *this = finalImage;
+        ppt->emitPrewittProgress(0);
+        ppt->emitReset();
+    }
+
+
+    ppt->emitReset();
+    ppt->emitPrewittProgress(0);
     qDebug("filter applied");
-    *this = finalImage;
+
 }
 
 int** Image::getRegion(int i, int j)
@@ -120,4 +159,12 @@ int Image::getNormalizeDivider(int** mask)
         }
     }
     return sum;
+}
+
+prewittProgressTransmitter* Image::getPPT(){
+    return ppt;
+}
+
+void Image::setPPT(){
+    ppt = new prewittProgressTransmitter;
 }

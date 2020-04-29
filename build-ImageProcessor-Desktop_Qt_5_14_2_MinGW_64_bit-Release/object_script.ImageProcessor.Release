@@ -1,0 +1,12 @@
+release/configdialog.o
+release/customspinbox.o
+release/image.o
+release/main.o
+release/mainwindow.o
+release/matrixselector.o
+release/prewittprogresstransmitter.o
+release/moc_configdialog.o
+release/moc_customspinbox.o
+release/moc_mainwindow.o
+release/moc_matrixselector.o
+release/moc_prewittprogresstransmitter.o

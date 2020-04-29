@@ -27,10 +27,17 @@ private:
 
     QPushButton* registerButton;
 
+    QString matrixPath;
+
 private slots:
     void editMatrix();
     void comboBoxEdited(QString);
     void addEditMatrixSample();
+
+signals:
+    void test();
+
+
 
 public:
     explicit MatrixSelector(QWidget *parent = nullptr);
@@ -39,6 +46,7 @@ public:
     int** getMatrix();
     int getDivider();
     void actualizeMatrixSamples();
+    void setMatrixPath(QString filename);
 };
 
 #endif // MATRIXSELECTOR_HPP

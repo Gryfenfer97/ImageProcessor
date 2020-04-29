@@ -9,6 +9,7 @@ MatrixSelector::MatrixSelector(QWidget *parent) : QWidget(parent)
     //handle comboBox
     comboBox = new QComboBox(this);
 
+    matrixPath = "ConvolutionMatrix.txt";
     actualizeMatrixSamples();
     connect(comboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboBoxEdited(QString)));
 
@@ -35,12 +36,11 @@ MatrixSelector::MatrixSelector(QWidget *parent) : QWidget(parent)
     dividerLineEdit->setText("1");
     dividerLineEdit->setAlignment(Qt::AlignCenter);
     layout->addWidget(dividerLineEdit,4,0,1,3);
-    layout->setRowStretch(5,4);
-    registerButton = new QPushButton("Register",this);
-    layout->addWidget(registerButton, 6, 0, 1, 3);
+    registerButton = new QPushButton(tr("Register"),this);
+    layout->addWidget(registerButton, 5, 0, 1, 3);
 
     setLayout(layout);
-    resize(150,200);
+
 
 
     connect(registerButton, SIGNAL(clicked()), this, SLOT(addEditMatrixSample()));
@@ -82,7 +82,8 @@ void MatrixSelector::comboBoxEdited(QString text){
             }
         }
         dividerLineEdit->setText("1");
-        registerButton->setText("Register");
+        registerButton->setText(tr("Register"));
+        registerButton->setEnabled(true);
     }
     else{
         for(int i=0;i<3;i++){
@@ -92,26 +93,27 @@ void MatrixSelector::comboBoxEdited(QString text){
             }
         }
         dividerLineEdit->setText(QString::number(std::get<1>(matrixSampleMap[text])));
-        registerButton->setText("Edit");
+        registerButton->setText(tr("Edit"));
         registerButton->setEnabled(false);
     }
 
 }
 
 void MatrixSelector::actualizeMatrixSamples(){
-    QFile file("ConvolutionMatrix.txt");
+    QFile file(matrixPath);
     disconnect(comboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboBoxEdited(QString))); //required for clear the comboBox
     comboBox->clear();
 
-    comboBox->addItem("Personnalisé");
+    comboBox->addItem(tr("Custom"));
     comboBox->insertSeparator(1);
-
+    //qDebug() << matrixPath;
     if (file.open(QIODevice::ReadOnly)) {
         QTextStream stream(&file);
         QString temp;
         QString value;
         while(!stream.atEnd()){
             stream >> temp;
+
             std::get<0>(matrixSampleMap[temp]) = new int*[3];
             comboBox->addItem(temp);
             for(int i=0;i<3;i++){
@@ -137,8 +139,8 @@ void MatrixSelector::actualizeMatrixSamples(){
 void MatrixSelector::addEditMatrixSample(){
 
 
-    QFile file("ConvolutionMatrix.txt");
-    if(registerButton->text() == "Register"){
+    QFile file(matrixPath);
+    if(registerButton->text() == tr("Register")){
 
         if(file.open(QIODevice::Append)){
             bool ok;
@@ -163,5 +165,9 @@ void MatrixSelector::addEditMatrixSample(){
         }
     }
     file.close();
+    actualizeMatrixSamples();
+}
+void MatrixSelector::setMatrixPath(QString filename){
+    matrixPath = filename;
     actualizeMatrixSamples();
 }

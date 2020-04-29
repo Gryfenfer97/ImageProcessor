@@ -1,0 +1,12 @@
+debug/configdialog.o
+debug/customspinbox.o
+debug/image.o
+debug/main.o
+debug/mainwindow.o
+debug/matrixselector.o
+debug/prewittprogresstransmitter.o
+debug/moc_configdialog.o
+debug/moc_customspinbox.o
+debug/moc_mainwindow.o
+debug/moc_matrixselector.o
+debug/moc_prewittprogresstransmitter.o

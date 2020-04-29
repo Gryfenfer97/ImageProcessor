@@ -7,13 +7,18 @@
 #include <QImageReader>
 #include <QDir>
 #include <QDebug>
-//#include <QInputDialog>
 #include <QSpinBox>
 #include <QFileDialog>
-//#include <QAction>
 #include <QMenuBar>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QProgressBar>
+#include <QTranslator>
+#include <QResizeEvent>
+#include "customspinbox.hpp"
 #include "matrixselector.hpp"
 #include "image.hpp"
+#include "configdialog.hpp"
 
 class MainWindow : public QMainWindow
 {
@@ -22,19 +27,24 @@ private:
     QPushButton* generateImageBtn;
     QPushButton* prewittBtn;
     Image image;
+    Image miniImage;
     QLabel* imageLabel;
-    QSpinBox* widthSpinBox;
-    QSpinBox* heightSpinBox;
+    QLabel* miniImageLabel;
+    customSpinBox* widthSpinBox;
+    customSpinBox* heightSpinBox;
     MatrixSelector* ms;
     QWidget* m_mainWidget;
-    QGridLayout* layout;
+    QHBoxLayout* layout;
+    QVBoxLayout* sideLayout;
+    QProgressBar* progressBar;
+    QMap<QString, QString> configMap;
 
+    QVector<Image> imageHistory;
+    int indexHistory;
 
     void reloadImage();
+    void actualizeHistory();
 
-
-
-    QAction* write;
 
 
 private slots:
@@ -42,6 +52,10 @@ private slots:
     void prewitt();
     void saveImage();
     void openImage();
+    void openConfiguration();
+    void undo();
+    void redo();
+
 
 public:
     MainWindow(QWidget *parent = nullptr);
