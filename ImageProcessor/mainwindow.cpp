@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     generateImageBtn = new QPushButton(tr("&Generate Image"),this);
     prewittBtn = new QPushButton("Prewitt", this);
+    filterBtn = new QPushButton(tr("apply filter"), this);
 
     widthSpinBox = new customSpinBox(tr("width : "), this);
     heightSpinBox = new customSpinBox(tr("height : "),this);
@@ -55,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
     sideLayout->addStretch(1);
     sideLayout->addWidget(ms);
     sideLayout->addStretch(1);
+    sideLayout->addWidget(filterBtn);
     sideLayout->addWidget(prewittBtn);
     sideLayout->addWidget(progressBar);
     sideLayout->addStretch(1);
@@ -85,6 +87,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(generateImageBtn, SIGNAL(clicked(bool)), this, SLOT(generateImage()));
     connect(prewittBtn, SIGNAL(clicked(bool)), this, SLOT(prewitt()));
+    connect(filterBtn, SIGNAL(clicked(bool)), this, SLOT(applyFilter()));
     connect(image.getPPT(), SIGNAL(prewittProgress(int)), progressBar, SLOT(setValue(int)));
     connect(image.getPPT(), SIGNAL(reset()), progressBar, SLOT(reset()));
 
@@ -121,8 +124,8 @@ void MainWindow::reloadImage(){
 
 }
 
-void MainWindow::prewitt(){
-    image.prewitt(ms->getMatrix(), ms->getDivider(), configMap["Mode"]);
+void MainWindow::applyFilter(){
+    image.filter(ms->getMatrix(), ms->getDivider(), configMap["Mode"]);
     actualizeHistory();
     reloadImage();
 
@@ -172,12 +175,18 @@ void MainWindow::openImage(){
              }
          }
 
-        image.prewitt(identity,1);
+        image.filter(identity,1);
          miniImage = image;
          actualizeHistory();
          reloadImage();
         setWindowTitle("ImageEncoder | " + filename);
      }
+}
+
+void MainWindow::prewitt(){
+    image.prewitt();
+    actualizeHistory();
+    reloadImage();
 }
 
 void MainWindow::undo(){

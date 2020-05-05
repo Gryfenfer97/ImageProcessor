@@ -26,6 +26,7 @@ class MainWindow : public QMainWindow
 private:
     QPushButton* generateImageBtn;
     QPushButton* prewittBtn;
+    QPushButton* filterBtn;
     Image image;
     Image miniImage;
     QLabel* imageLabel;
@@ -49,6 +50,7 @@ private:
 
 private slots:
     void generateImage();
+    void applyFilter();
     void prewitt();
     void saveImage();
     void openImage();

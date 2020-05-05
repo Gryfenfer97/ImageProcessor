@@ -58,7 +58,7 @@ void Image::save(QString filename){
 }
 
 
-void Image::prewitt(int** mask, int divider, QString mode){
+void Image::filter(int** mask, int divider, QString mode){
     int color;
     int progress = 0;
     if (divider == 0) {
@@ -159,6 +159,39 @@ int Image::getNormalizeDivider(int** mask)
         }
     }
     return sum;
+}
+
+void Image::prewitt(){
+    int** dGx = new int*[3];
+    for(int i=0;i<3;i++){
+        dGx[i] = new int[3];
+        for(int j=-1;j<2;j++){
+            dGx[i][j+1] = j;
+        }
+    }
+
+    int** dGy = new int*[3];
+    for(int i=0;i<3;i++){
+        dGy[i] = new int[3];
+
+    }
+    for(int i=0;i<3;i++){
+        for(int j=-1;j<2;j++){
+            dGy[j+1][i] = j;
+        }
+
+    }
+
+    Image G(*this);
+    for (int y = 0; y < height(); y++) {
+        for (int x = 0; x < width(); x++) {
+            int Gx = matrixConvolutionProduct(getRegion(y,x), dGx);
+            int Gy = matrixConvolutionProduct(getRegion(y,x), dGy);
+            int color = sqrt(pow(Gx,2) + pow(Gy,2));
+            G.setPixel(x,y,qRgb(color, color, color));
+        }
+    }
+    *this = G;
 }
 
 prewittProgressTransmitter* Image::getPPT(){

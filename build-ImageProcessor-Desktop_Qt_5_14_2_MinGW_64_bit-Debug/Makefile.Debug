@@ -281,6 +281,19 @@ debug/moc_configdialog.cpp: ../ImageProcessor/configdialog.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qtextformat.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qpen.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QFileDialog \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qfiledialog.h \
+		ui_dialog.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Jamil/Documents/Projets/Qt/ImageProcessor/build-ImageProcessor-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/Jamil/Documents/Projets/Qt/ImageProcessor/ImageProcessor -IC:/Qt/5.14.2/mingw73_64/include -IC:/Qt/5.14.2/mingw73_64/include/QtWidgets -IC:/Qt/5.14.2/mingw73_64/include/QtGui -IC:/Qt/5.14.2/mingw73_64/include/QtANGLE -IC:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\ImageProcessor\configdialog.hpp -o debug\moc_configdialog.cpp
@@ -554,6 +567,9 @@ debug/moc_mainwindow.cpp: ../ImageProcessor/mainwindow.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QProgressBar \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QTranslator \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qtranslator.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/QResizeEvent \
 		../ImageProcessor/customspinbox.hpp \
 		../ImageProcessor/matrixselector.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
@@ -591,6 +607,15 @@ debug/moc_mainwindow.cpp: ../ImageProcessor/mainwindow.hpp \
 		../ImageProcessor/configdialog.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialog \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout \
+		ui_dialog.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Jamil/Documents/Projets/Qt/ImageProcessor/build-ImageProcessor-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/Jamil/Documents/Projets/Qt/ImageProcessor/ImageProcessor -IC:/Qt/5.14.2/mingw73_64/include -IC:/Qt/5.14.2/mingw73_64/include/QtWidgets -IC:/Qt/5.14.2/mingw73_64/include/QtGui -IC:/Qt/5.14.2/mingw73_64/include/QtANGLE -IC:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\ImageProcessor\mainwindow.hpp -o debug\moc_mainwindow.cpp
@@ -1024,7 +1049,20 @@ debug/configdialog.o: ../ImageProcessor/configdialog.cpp ../ImageProcessor/confi
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qtextcursor.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qtextformat.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/5.14.2/mingw73_64/include/QtGui/qtextoption.h
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QFileDialog \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qfiledialog.h \
+		ui_dialog.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\configdialog.o ..\ImageProcessor\configdialog.cpp
 
 debug/customspinbox.o: ../ImageProcessor/customspinbox.cpp ../ImageProcessor/customspinbox.hpp \
@@ -1417,6 +1455,9 @@ debug/main.o: ../ImageProcessor/main.cpp ../ImageProcessor/mainwindow.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QProgressBar \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QTranslator \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qtranslator.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/QResizeEvent \
 		../ImageProcessor/customspinbox.hpp \
 		../ImageProcessor/matrixselector.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
@@ -1454,13 +1495,15 @@ debug/main.o: ../ImageProcessor/main.cpp ../ImageProcessor/mainwindow.hpp \
 		../ImageProcessor/configdialog.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialog \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout \
+		ui_dialog.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		C:/Qt/5.14.2/mingw73_64/include/QtCore/QTranslator \
-		C:/Qt/5.14.2/mingw73_64/include/QtCore/qtranslator.h
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\ImageProcessor\main.cpp
 
 debug/mainwindow.o: ../ImageProcessor/mainwindow.cpp ../ImageProcessor/mainwindow.hpp \
@@ -1611,6 +1654,9 @@ debug/mainwindow.o: ../ImageProcessor/mainwindow.cpp ../ImageProcessor/mainwindo
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QProgressBar \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QTranslator \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qtranslator.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/QResizeEvent \
 		../ImageProcessor/customspinbox.hpp \
 		../ImageProcessor/matrixselector.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
@@ -1647,7 +1693,16 @@ debug/mainwindow.o: ../ImageProcessor/mainwindow.cpp ../ImageProcessor/mainwindo
 		../ImageProcessor/prewittprogresstransmitter.hpp \
 		../ImageProcessor/configdialog.hpp \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialog \
-		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout \
+		ui_dialog.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\ImageProcessor\mainwindow.cpp
 
 debug/matrixselector.o: ../ImageProcessor/matrixselector.cpp ../ImageProcessor/matrixselector.hpp \

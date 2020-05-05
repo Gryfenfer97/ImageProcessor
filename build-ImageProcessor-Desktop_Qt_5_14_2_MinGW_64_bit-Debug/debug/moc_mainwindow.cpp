@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[9];
-    char stringdata0[82];
+    QByteArrayData data[10];
+    char stringdata0[94];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,17 +35,18 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 13), // "generateImage"
 QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 7), // "prewitt"
-QT_MOC_LITERAL(4, 34, 9), // "saveImage"
-QT_MOC_LITERAL(5, 44, 9), // "openImage"
-QT_MOC_LITERAL(6, 54, 17), // "openConfiguration"
-QT_MOC_LITERAL(7, 72, 4), // "undo"
-QT_MOC_LITERAL(8, 77, 4) // "redo"
+QT_MOC_LITERAL(3, 26, 11), // "applyFilter"
+QT_MOC_LITERAL(4, 38, 7), // "prewitt"
+QT_MOC_LITERAL(5, 46, 9), // "saveImage"
+QT_MOC_LITERAL(6, 56, 9), // "openImage"
+QT_MOC_LITERAL(7, 66, 17), // "openConfiguration"
+QT_MOC_LITERAL(8, 84, 4), // "undo"
+QT_MOC_LITERAL(9, 89, 4) // "redo"
 
     },
-    "MainWindow\0generateImage\0\0prewitt\0"
-    "saveImage\0openImage\0openConfiguration\0"
-    "undo\0redo"
+    "MainWindow\0generateImage\0\0applyFilter\0"
+    "prewitt\0saveImage\0openImage\0"
+    "openConfiguration\0undo\0redo"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +56,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,15 +64,17 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x08 /* Private */,
-       3,    0,   50,    2, 0x08 /* Private */,
-       4,    0,   51,    2, 0x08 /* Private */,
-       5,    0,   52,    2, 0x08 /* Private */,
-       6,    0,   53,    2, 0x08 /* Private */,
-       7,    0,   54,    2, 0x08 /* Private */,
-       8,    0,   55,    2, 0x08 /* Private */,
+       1,    0,   54,    2, 0x08 /* Private */,
+       3,    0,   55,    2, 0x08 /* Private */,
+       4,    0,   56,    2, 0x08 /* Private */,
+       5,    0,   57,    2, 0x08 /* Private */,
+       6,    0,   58,    2, 0x08 /* Private */,
+       7,    0,   59,    2, 0x08 /* Private */,
+       8,    0,   60,    2, 0x08 /* Private */,
+       9,    0,   61,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -90,12 +93,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->generateImage(); break;
-        case 1: _t->prewitt(); break;
-        case 2: _t->saveImage(); break;
-        case 3: _t->openImage(); break;
-        case 4: _t->openConfiguration(); break;
-        case 5: _t->undo(); break;
-        case 6: _t->redo(); break;
+        case 1: _t->applyFilter(); break;
+        case 2: _t->prewitt(); break;
+        case 3: _t->saveImage(); break;
+        case 4: _t->openImage(); break;
+        case 5: _t->openConfiguration(); break;
+        case 6: _t->undo(); break;
+        case 7: _t->redo(); break;
         default: ;
         }
     }
@@ -131,13 +135,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

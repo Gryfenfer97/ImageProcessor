@@ -34,10 +34,6 @@ private slots:
     void comboBoxEdited(QString);
     void addEditMatrixSample();
 
-signals:
-    void test();
-
-
 
 public:
     explicit MatrixSelector(QWidget *parent = nullptr);

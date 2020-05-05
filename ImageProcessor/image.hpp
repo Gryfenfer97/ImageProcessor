@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QObject>
 #include <QWidget>
+#include <math.h>
 #include "prewittprogresstransmitter.hpp"
 
 
@@ -33,7 +34,8 @@ public:
 
     prewittProgressTransmitter* getPPT();
 
-    void prewitt(int** mask, int divider, QString mode="Wrap");
+    void filter(int** mask, int divider, QString mode="Wrap");
+    void prewitt();
 
     void save(QString filename);
 
